@@ -1,2 +1,4 @@
-var canvas = document.getElementById('frogger-canvas');
-var context = canvas.getContext('2d');
+const Player = require('./Player.js');
+const canvas = document.getElementById('frogger-canvas');
+const context = canvas.getContext('2d');
+
