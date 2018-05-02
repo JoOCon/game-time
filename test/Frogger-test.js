@@ -1,11 +1,24 @@
 const { expect } = require('chai');
 const Frogger = require('../lib/Frogger.js');
 
+require('locus');
+describe('Frogger test suite', () => {
+  it('should insatiate a new Frogger at the bottom center of the the canvas', () => {
+    // Setup
+    const frog = new Frogger(200, 200, 20, 20);
+    // Execution
+    const expected = { x: 200, y: 200, width: 20, height: 20 };
+    // Expect
 
-describe('Card', () => {
-  // Setup
-  const frog = new Frogger(200, 200, 20, 20);
-  // Execution
+    expect(frog).to.deep.equal(expected);
+  });
 
-  // Expect
+  it.skip('should be able to move by 50px up', () => {
+    const frog = new Frogger(200, 650, 20, 20);
+    const expected = 600;
+    // Execution
+    const frogMove = frog.move();
+
+    expect(frogMove).to.be(expected);
+  });
 });

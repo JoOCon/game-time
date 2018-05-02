@@ -1,8 +1,8 @@
 const { expect } = require('chai');
 const Character = require('../lib/Character');
 
-describe('Character', () => {
-  it('should instantiate a new Character with a x pos y pos width and height value', function () {
+describe('Character test suite', () => {
+  it('should instantiate a new Character with a x pos y pos width and height value', () => {
     // Setup
     const character = new Character(0, 10, 50, 50);
     // Execution
