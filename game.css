@@ -1,6 +1,6 @@
 #frogger-canvas {
+  background: black;
   border: 1px dashed;
   display: block;
   margin: auto;
-  background: black;
 }
