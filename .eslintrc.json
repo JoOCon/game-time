@@ -15,7 +15,7 @@
       "single"
     ],
     "semi": [
-      2,
+      "error",
       "always"
     ],
     "brace-style": "error",
