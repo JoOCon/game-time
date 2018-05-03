@@ -3,7 +3,7 @@ const Frogger = require('../lib/Frogger.js');
 
 require('locus');
 describe('Frogger test suite', () => {
-  it('should insatiate a new Frogger at the bottom center of the the canvas', () => {
+  it('should insatiate a new Frogger int the correct position', () => {
     // Setup
     const frog = new Frogger(200, 200, 20, 20);
     // Execution
