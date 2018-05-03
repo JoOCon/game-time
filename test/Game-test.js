@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const Game = require('../lib/Game.js');
 
-describe('Game test suiet', () => {
+describe('Game test suite', () => {
   it('should instantiante a new Game state', () => {
     //setup
     const game = new Game();
