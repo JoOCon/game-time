@@ -10,6 +10,10 @@
     "sourceType": "module"
   },
   "rules": {
+    "quotes": [
+      "error",
+      "single"
+    ],
     "semi": [
       2,
       "always"
