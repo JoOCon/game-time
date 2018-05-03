@@ -1,13 +1,17 @@
 const { expect } = require('chai');
 const Frogger = require('../lib/Frogger.js');
 
-require('locus');
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
-    // Setup
+    // Setups
     const frog = new Frogger(275, 650, 50, 50);
     // Execution
-    const expected = { x: 275, y: 650, width: 50, height: 50 };
+    const expected = {
+      x: 275,
+      y: 650,
+      width: 50,
+      height: 50
+    };
 
     // Expectation
     expect(frog).to.deep.equal(expected);
