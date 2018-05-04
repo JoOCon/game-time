@@ -8,7 +8,8 @@ describe('Log test suite', () => {
     // Execution
     const expected = {
       img: '../img/log.png',
-      x: 0, y: 295,
+      x: 0,
+      y: 295,
       width: 225,
       height: 55
     };
