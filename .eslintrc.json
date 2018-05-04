@@ -10,6 +10,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-debugger": "off",
     "quotes": [
       "error",
       "single"
