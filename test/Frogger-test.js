@@ -4,9 +4,10 @@ const Frogger = require('../lib/Frogger.js');
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
     // Setups
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     // Execution
     const expected = {
+      img: '../img/frogger.png',
       x: 275,
       y: 650,
       width: 50,
@@ -19,7 +20,7 @@ describe('Frogger test suite', () => {
 
   it('should be able to move up on canvas by 50px', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const upEvent = 'up';
     const expectedUp = 600;
     // Execution
@@ -33,7 +34,7 @@ describe('Frogger test suite', () => {
 
   it('should be able to move right on canvas by 68px', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
     const expectedDown = 343;
 
@@ -47,7 +48,7 @@ describe('Frogger test suite', () => {
 
   it('should be able to move left on canvas by 68px', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
     const expectedDown = 207;
 
@@ -61,7 +62,7 @@ describe('Frogger test suite', () => {
 
   it('should be able move forward but not outside canvas', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const upEvent = 'up';
     const expectedUp = 0;
 
@@ -77,7 +78,7 @@ describe('Frogger test suite', () => {
 
   it('should be able move right but not outside of canvas', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
     const expectedUp = 547;
 
@@ -93,7 +94,7 @@ describe('Frogger test suite', () => {
 
   it('should be able move left but not outside of canvas', () => {
     // Setup
-    const frog = new Frogger(275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
     const expectedUp = 3;
 
