@@ -1,5 +1,6 @@
 const { expect } = require('chai');
 const Game = require('../lib/Game.js');
+const Frogger = require('../lib/Frogger.js');
 const Log = require('../lib/Log.js');
 
 describe('Game test suite', () => {
@@ -15,7 +16,22 @@ describe('Game test suite', () => {
     expect(game).to.deep.equal(gameState);
   });
 
-  it('should make an object of arrays to hold all logs', () => {
+  it('should generate a new Frogger', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const game = new Game(frogImg, logImg);
+    const expected = new Frogger(frogImg, 275, 650, 50, 50);
+
+    // Execution
+    const actual = game.generateFrog();
+    // Expectation
+
+    // eval(locus);
+    expect(actual).to.deep.equal(expected);
+  });
+
+  it('should generate an array of Logs', () => {
     // Setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
@@ -27,10 +43,7 @@ describe('Game test suite', () => {
     const log4 = new Log('../img/log.png', 550, 148, 225, 52);
     const log5 = new Log('../img/log.png', -150, 98, 225, 52);
     const log6 = new Log('../img/log.png', 550, 48, 225, 52);
-    const expected = {
-      evens: [log1, log3, log5],
-      odds: [log2, log4, log6]
-    };
+    const expected = [log1, log2, log3, log4, log5, log6];
 
     // Execution
     const actual = game.generateLogs();
