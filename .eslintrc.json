@@ -67,10 +67,6 @@
         "newIsCap": true
       }
     ],
-    "newline-after-var": [
-      "error",
-      "always"
-    ],
     "object-shorthand": [
       "error",
       "always"

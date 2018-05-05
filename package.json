@@ -27,6 +27,8 @@
     "chai": "^4.1.2",
     "css-loader": "^0.28.11",
     "eslint": "^4.9.0",
+    "jsdom": "11.6.2",
+    "jsdom-global": "3.0.2",
     "locus": "^2.0.1",
     "mocha": "^5.1.1",
     "mocha-loader": "^1.0.0",
