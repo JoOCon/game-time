@@ -11,7 +11,8 @@ describe('Frogger test suite', () => {
       x: 275,
       y: 650,
       width: 50,
-      height: 50
+      height: 50,
+      onLog: false
     };
 
     // Expectation
