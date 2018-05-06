@@ -8,9 +8,10 @@ describe('Game test suite', () => {
     //setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
-    const game = new Game(frogImg, logImg);
+    const autoImg = '../img/yellow-car.png';
+    const game = new Game(frogImg, logImg, autoImg);
     //execution
-    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg };
+    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg, autoImg };
     //expect
 
     expect(game).to.deep.equal(gameState);
@@ -37,12 +38,12 @@ describe('Game test suite', () => {
     const logImg = '../img/log.png';
     const game = new Game(frogImg, logImg);
 
-    const log1 = new Log('../img/log.png', -150, 298, 225, 52);
-    const log2 = new Log('../img/log.png', 550, 248, 225, 52);
-    const log3 = new Log('../img/log.png', -150, 198, 225, 52);
-    const log4 = new Log('../img/log.png', 550, 148, 225, 52);
-    const log5 = new Log('../img/log.png', -150, 98, 225, 52);
-    const log6 = new Log('../img/log.png', 550, 48, 225, 52);
+    const log1 = new Log('../img/log.png', -150, 298, 225, 52, 1.5, 'right');
+    const log2 = new Log('../img/log.png', 550, 248, 225, 52, 2, 'left');
+    const log3 = new Log('../img/log.png', -150, 198, 225, 52, .5, 'right');
+    const log4 = new Log('../img/log.png', 550, 148, 225, 52, 1.5, 'left');
+    const log5 = new Log('../img/log.png', -150, 98, 225, 52, 1, 'right');
+    const log6 = new Log('../img/log.png', 550, 48, 225, 52, 1, 'left');
     const expected = [log1, log2, log3, log4, log5, log6];
 
     // Execution
