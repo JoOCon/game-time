@@ -1,5 +1,7 @@
 const { expect } = require('chai');
 const Frogger = require('../lib/Frogger.js');
+const Log = require('../lib/Log.js');
+require('locus');
 
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
@@ -11,7 +13,8 @@ describe('Frogger test suite', () => {
       x: 275,
       y: 650,
       width: 50,
-      height: 50
+      height: 50,
+      floating: false
     };
 
     // Expectation
@@ -107,5 +110,44 @@ describe('Frogger test suite', () => {
     // Expectation
 
     expect(actualDown).to.equal(expectedUp);
+  });
+
+  it('should set frog.floating to true if frog is on a log', () => {
+    // Setup
+    const frog = new Frogger('../img/frogger.png', -150, 300, 50, 50);
+    const log1 = new Log('../img/log.png', -150, 298, 250, 52, 1.5, 'right');
+    const log2 = new Log('../img/log.png', 550, 248, 250, 52, 2, 'left');
+    const log3 = new Log('../img/log.png', -150, 198, 250, 52, .5, 'right');
+    const log4 = new Log('../img/log.png', 550, 148, 250, 52, 1.5, 'left');
+    const log5 = new Log('../img/log.png', -150, 98, 250, 52, 1, 'right');
+    const log6 = new Log('../img/log.png', 550, 48, 250, 52, 1, 'left');
+    const logs = [log1, log2, log3, log4, log5, log6];
+    const expected = true;
+    // Execution
+    frog.jumpOnLog(logs);
+    const actual = frog.floating;
+    // Expectation
+
+    expect(actual).to.equal(expected);
+  });
+
+  it('should be able to float and move on a log', () => {
+    // Setup
+    const frog = new Frogger('../img/frogger.png', -150, 300, 50, 50);
+    const log1 = new Log('../img/log.png', -150, 298, 250, 52, 1.5, 'right');
+    const log2 = new Log('../img/log.png', 550, 248, 250, 52, 2, 'left');
+    const log3 = new Log('../img/log.png', -150, 198, 250, 52, .5, 'right');
+    const log4 = new Log('../img/log.png', 550, 148, 250, 52, 1.5, 'left');
+    const log5 = new Log('../img/log.png', -150, 98, 250, 52, 1, 'right');
+    const log6 = new Log('../img/log.png', 550, 48, 250, 52, 1, 'left');
+    const logs = [log1, log2, log3, log4, log5, log6];
+    const expected = -148.5;
+    // Execution
+    frog.jumpOnLog(logs);
+    frog.drift(logs);
+    const actual = frog.x;
+
+    // Expectation
+    expect(actual).to.equal(expected);
   });
 });
