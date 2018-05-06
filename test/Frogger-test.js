@@ -14,7 +14,7 @@ describe('Frogger test suite', () => {
       y: 650,
       width: 50,
       height: 50,
-      onLog: false
+      floating: false
     };
 
     // Expectation
@@ -112,7 +112,7 @@ describe('Frogger test suite', () => {
     expect(actualDown).to.equal(expectedUp);
   });
 
-  it('should set frog.onLog to true if frog is on a log', () => {
+  it('should set frog.floating to true if frog is on a log', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', -150, 300, 50, 50);
     const log1 = new Log('../img/log.png', -150, 298, 250, 52, 1.5, 'right');
@@ -125,7 +125,7 @@ describe('Frogger test suite', () => {
     const expected = true;
     // Execution
     frog.jumpOnLog(logs);
-    const actual = frog.onLog;
+    const actual = frog.floating;
     // Expectation
 
     expect(actual).to.equal(expected);
