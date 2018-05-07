@@ -166,13 +166,16 @@ describe('Game test suite', () => {
     const game = new Game(frogImg, logImg, carImg, truckImg);
     const expected = {
       x: 275,
-      y: 650
+      y: 650,
+      lives: 2
     };
     // Execution
+    game.frog.x = 600;
     game.outOfBounds();
     const actual = {
       x: game.frog.x,
-      y: game.frog.y
+      y: game.frog.y,
+      lives: game.lives
     };
     // Expectation
     expect(actual).to.deep.equal(expected);
