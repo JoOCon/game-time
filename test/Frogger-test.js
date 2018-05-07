@@ -1,7 +1,6 @@
-const { expect } = require('chai');
-const Frogger = require('../lib/Frogger.js');
-const Log = require('../lib/Log.js');
-require('locus');
+import { expect } from 'chai';
+import Frogger from '../lib/Frogger.js';
+import Log from '../lib/Log.js';
 
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
@@ -16,7 +15,6 @@ describe('Frogger test suite', () => {
     };
     // Execution
     const actual = new Frogger('../img/frogger.png', 275, 650, 50, 50);
-
     // Expectation
     expect(actual).to.deep.equal(expected);
   });

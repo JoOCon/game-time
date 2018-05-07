@@ -1,29 +1,63 @@
-const { expect } = require('chai');
-const Auto = require('../lib/Auto.js');
-const Game = require('../lib/Game.js');
-// require('locus');
+import { expect } from 'chai';
+import Auto from '../lib/Auto.js';
 
 describe('Auto test suite', () => {
-  //setup
-  // it('When a new Auto is istantiated it should have a size', () => {
-  //   const params = { width: 100, height: 40 };
-  //   const car = new Auto(params);
 
-  //   const expectedSize = 100;
+  it('should instantiate a new car', () => {
+    // Setup
+    const carImg = '../img/yellow-car.png';
+    const expected = {
+      img: carImg, 
+      x: 0, 
+      y: 605, 
+      width: 80, 
+      height: 40, 
+      speed: 2
+    };
+    // Execution
+    const actual = new Auto(carImg, 0, 605, 80, 40, 2);
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
 
-  //   expect(car.width).to.equal(expectedSize);
-  // });
+  it('should instantiate a new truck', () => {
+    // Setup
+    const truckImg = '../img/large-truck.png';
+    const expected = {
+      img: truckImg, 
+      x: 0, 
+      y: 605, 
+      width: 80, 
+      height: 40, 
+      speed: 2
+    };
+    // Execution
+    const actual = new Auto(truckImg, 0, 605, 80, 40, 2);
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
 
-  it('when the move method is invoked i expect the x of auto to increment by 1', () => {
-    const expectedX = 51;
-    const params = { x: 50, y: 50, width: 100, 
-                     height: 100, autoType: null,
-                    color: 'red' }
-    const car = new Auto(params);
+  it('when the move method is invoked I expect the x of car to increment by 2', () => {
+    // Setup
+    const carImg = '../img/yellow-car.png';
+    const car = new Auto(carImg, 50, 605, 80, 40, 2);
+    car.move();
+    const expected = 52;
+    // Execution
+    const actual = car.x;
+    // Expectation
+    expect(actual).to.equal(expected);
+  });
 
-    const actual = car.move();
-
-    expect(actual.x).to.equal(expectedX);
-  })
-
+  it('when the move method is invoked I expect the x of truck to increment by 2', () => {
+    // Setup
+    const truckImg = '../img/large-truck.png';
+    const truck = new Auto(truckImg, 50, 605, 80, 40, 2);
+    truck.move();
+    const expected = 52;
+    // Execution
+    const actual = truck.x;
+    // Expectation
+    expect(actual).to.equal(expected);
+  });
 });

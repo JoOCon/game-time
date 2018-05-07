@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const Character = require('../lib/Character');
+import { expect } from 'chai';
+import Character from '../lib/Character';
 
 describe('Character test suite', () => {
   it('should instantiate a new Character with correct position', () => {
