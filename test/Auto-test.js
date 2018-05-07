@@ -8,33 +8,57 @@ describe('Auto test suite', () => {
   it('should instantiate a new car', () => {
     //setup
     const carImg = '../img/yellow-car.png';
-    const car = new Auto(carImg, 0, 605, 80, 40);
+    const expected = {
+      img: carImg, 
+      x: 0, 
+      y: 605, 
+      width: 80, 
+      height: 40, 
+      speed: 2
+    };
     //execution
-    const expected = {img: carImg, x: 0, y: 605, width: 80, height: 40};
+    const actual = new Auto(carImg, 0, 605, 80, 40, 2);
     //expect
-    expect(car).to.deep.equal(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should instantiate a new truck', () => {
     //setup
     const truckImg = '../img/large-truck.png';
-    const truck = new Auto(truckImg, 0, 605, 80, 40);
+    const expected = {
+      img: truckImg, 
+      x: 0, 
+      y: 605, 
+      width: 80, 
+      height: 40, 
+      speed: 2
+    };
     //execution
-    const expected = {img: truckImg, x: 0, y: 605, width: 80, height: 40};
+    const actual = new Auto(truckImg, 0, 605, 80, 40, 2);
     //expect
-    expect(truck).to.deep.equal(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
-  it.skip('when the move method is invoked i expect the x of auto to increment by 1', () => {
-    const expectedX = 51;
-    const params = { x: 50, y: 50, width: 100, 
-                     height: 100, autoType: null,
-                    color: 'red' }
-    const car = new Auto(params);
+  it('when the move method is invoked I expect the x of car to increment by 2', () => {
+    const carImg = '../img/yellow-car.png';
+    const car = new Auto(carImg, 50, 605, 80, 40, 2);
+    car.move();
+    const expected = 52;
 
-    const actual = car.move();
+    const actual = car.x;
 
-    expect(actual.x).to.equal(expectedX);
-  })
+    expect(actual).to.equal(expected);
+  });
+
+  it('when the move method is invoked I expect the x of truck to increment by 2', () => {
+    const truckImg = '../img/large-truck.png';
+    const truck = new Auto(truckImg, 50, 605, 80, 40, 2);
+    truck.move();
+    const expected = 52;
+
+    const actual = truck.x;
+
+    expect(actual).to.equal(expected);
+  });
 
 });
