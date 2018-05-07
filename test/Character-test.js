@@ -4,8 +4,6 @@ const Character = require('../lib/Character');
 describe('Character test suite', () => {
   it('should instantiate a new Character with correct position', () => {
     // Setup
-    const character = new Character('../img/frogger.png', 0, 10, 50, 50);
-    // Execution
     const expected = {
       img: '../img/frogger.png',
       x: 0,
@@ -13,8 +11,9 @@ describe('Character test suite', () => {
       width: 50,
       height: 50
     };
+    // Execution
+    const actual = new Character('../img/frogger.png', 0, 10, 50, 50);
     // Expect
-
-    expect(character).to.deep.equal(expected);
+    expect(actual).to.deep.equal(expected);
   });
 });
