@@ -10,8 +10,9 @@ describe('Game test suite', () => {
     const logImg = '../img/log.png';
     const autoImg = '../img/yellow-car.png';
     const game = new Game(frogImg, logImg, autoImg);
+    const frog = new Frogger(frogImg, 275, 650, 50, 50);
     //execution
-    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg, autoImg };
+    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg, autoImg, frog };
     //expect
 
     expect(game).to.deep.equal(gameState);
@@ -28,7 +29,6 @@ describe('Game test suite', () => {
     const actual = game.generateFrog();
     // Expectation
 
-    // eval(locus);
     expect(actual).to.deep.equal(expected);
   });
 
