@@ -4,9 +4,7 @@ import Log from '../lib/Log.js';
 
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
-    // Setups
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
-    // Execution
+    // Setup
     const expected = {
       img: '../img/frogger.png',
       x: 275,
@@ -15,86 +13,88 @@ describe('Frogger test suite', () => {
       height: 50,
       floating: false
     };
+    // Execution
+    const actual = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     // Expectation
-    expect(frog).to.deep.equal(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should be able to move up on canvas by 50px', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const upEvent = 'up';
-    const expectedUp = 600;
+    const expected = 600;
     // Execution
     frog.move(upEvent);
-    const actualUp = frog.y;
+    const actual = frog.y;
     // Expectation
-    expect(actualUp).to.equal(expectedUp);
+    expect(actual).to.equal(expected);
   });
 
   it('should be able to move right on canvas by 68px', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
-    const expectedDown = 343;
+    const expected = 343;
     // Execution
     frog.move(rightEvent);
-    const actualDown = frog.x;
+    const actual = frog.x;
     // Expectation
-    expect(actualDown).to.equal(expectedDown);
+    expect(actual).to.equal(expected);
   });
 
   it('should be able to move left on canvas by 68px', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
-    const expectedDown = 207;
+    const expected = 207;
     // Execution
     frog.move(leftEvent);
-    const actualDown = frog.x;
+    const actual = frog.x;
     // Expectation
-    expect(actualDown).to.equal(expectedDown);
+    expect(actual).to.equal(expected);
   });
 
   it('should be able move forward but not outside canvas', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const upEvent = 'up';
-    const expectedUp = 0;
+    const expected = 0;
     // Execution
     for (let i = 0; i < 13; i++) {
       frog.move(upEvent);
     }
-    const actualDown = frog.y;
+    const actual = frog.y;
     // Expectation
-    expect(actualDown).to.equal(expectedUp);
+    expect(actual).to.equal(expected);
   });
 
   it('should be able move right but not outside of canvas', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
-    const expectedUp = 547;
+    const expected = 547;
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(rightEvent);
     }
-    const actualDown = frog.x;
+    const actual = frog.x;
     // Expectation
-    expect(actualDown).to.equal(expectedUp);
+    expect(actual).to.equal(expected);
   });
 
   it('should be able move left but not outside of canvas', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
-    const expectedUp = 3;
+    const expected = 3;
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(leftEvent);
     }
-    const actualDown = frog.x;
+    const actual = frog.x;
     // Expectation
-    expect(actualDown).to.equal(expectedUp);
+    expect(actual).to.equal(expected);
   });
 
   it('should set frog.floating to true if frog is on a log', () => {
