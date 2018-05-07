@@ -75,17 +75,18 @@ describe('Game test suite', () => {
     const truckImg = '../img/large-truck.png';
     const carImg = '../img/yellow-car.png';
     const game = new Game(frogImg, logImg, carImg, truckImg);
-    const car1 = new Auto(carImg, 0, 605, 80, 40, 2);
-    const car2 = new Auto(carImg, 100, 605, 80, 40, 2);
+    const car1 = new Auto(carImg, 0, 605, 80, 40, 4);
+    const car2 = new Auto(carImg, 100, 605, 80, 40, 4);
     const car3 = new Auto(carImg, 100, 505, 80, 40, 2);
     const car4 = new Auto(carImg, 200, 505, 80, 40, 2);
     const car5 = new Auto(carImg, 300, 505, 80, 40, 2);
-    const car6 = new Auto(carImg, 0, 405, 80, 40, 2);
-    const car7 = new Auto(carImg, 300, 405, 80, 40, 2);
-    const truck1 = new Auto(truckImg, 0, 555, 120, 40, 2);
-    const truck2 = new Auto(truckImg, 300, 555, 120, 40, 2);
-    const truck3 = new Auto(truckImg, 150, 455, 120, 40, 2);
-    const expected = [car1, car2, car3, car4, car5, car6, car7, truck1, truck2, truck3];
+    const car6 = new Auto(carImg, 0, 405, 80, 40, 3);
+    const car7 = new Auto(carImg, 350, 405, 80, 40, 3);
+    const truck1 = new Auto(truckImg, 0, 555, 120, 40, -2);
+    const truck2 = new Auto(truckImg, 300, 555, 120, 40, -2);
+    const truck3 = new Auto(truckImg, 100, 455, 120, 40, -3);
+    const expected = [car1, car2, car3, car4, car5, car6, car7, truck1, 
+      truck2, truck3];
     // Execution
     const actual = game.generateAutos();
     // Expectation
