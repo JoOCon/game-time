@@ -1,6 +1,6 @@
-const { expect } = require('chai');
-const Frogger = require('../lib/Frogger.js');
-const Log = require('../lib/Log.js');
+import { expect } from 'chai';
+import Frogger from '../lib/Frogger.js';
+import Log from '../lib/Log.js';
 require('locus');
 
 describe('Frogger test suite', () => {

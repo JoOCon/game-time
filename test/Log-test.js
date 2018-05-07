@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const Log = require('../lib/Log.js');
+import { expect } from 'chai';
+import Log from '../lib/Log.js';
 
 describe('Log test suite', () => {
   it('should instantiate a Log at the correct coordinates', () => {

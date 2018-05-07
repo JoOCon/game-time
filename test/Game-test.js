@@ -1,17 +1,18 @@
-const { expect } = require('chai');
-const Game = require('../lib/Game.js');
-const Frogger = require('../lib/Frogger.js');
-const Log = require('../lib/Log.js');
+import { expect } from 'chai';
+import Game from '../lib/Game.js';
+import Frogger from '../lib/Frogger.js';
+import Log from '../lib/Log.js';
 
 describe('Game test suite', () => {
   it('should instantiate a new Game state', () => {
     //setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
-    const autoImg = '../img/yellow-car.png';
-    const game = new Game(frogImg, logImg, autoImg);
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
+    const game = new Game(frogImg, logImg, carImg, truckImg);
     //execution
-    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg, autoImg };
+    const gameState = { lives: 3, gameActive: true, level: 0, frogImg, logImg, carImg, truckImg };
     //expect
 
     expect(game).to.deep.equal(gameState);
