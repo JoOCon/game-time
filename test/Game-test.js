@@ -126,4 +126,26 @@ describe('Game test suite', () => {
     // Expectation
     expect(actual).to.deep.equal(expected);
   });
+
+  it('should reset frog to begging game state when game.outOfBounds method is invoked', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
+    const frog = new Frogger(frogImg, 275, 650, 50, 50);
+    const game = new Game(frogImg, logImg, carImg, truckImg);
+    const expected = {
+      x: 275,
+      y: 650
+    };
+    // Execution
+    game.outOfBounds();
+    const actual = {
+      x: frog.x,
+      y: frog.y
+    };
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
 });
