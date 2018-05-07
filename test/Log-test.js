@@ -44,7 +44,7 @@ describe('Log test suite', () => {
   it('should reset log travelling to right to initial position', () => {
     // Setup
     const log = new Log('../img/log.png', 625, 298, 250, 52, .75, 'right');
-    const expectedRight = -220;
+    const expectedRight = -230;
     // Execution
     log.move();
     const actualRight = log.x;
