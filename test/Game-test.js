@@ -4,6 +4,7 @@ import Frogger from '../lib/Frogger.js';
 import Log from '../lib/Log.js';
 import Auto from '../lib/Auto.js';
 
+
 describe('Game test suite', () => {
   it('should instantiate a new Game state', () => {
     // Setup
@@ -35,6 +36,7 @@ describe('Game test suite', () => {
       lives: 3,
       gameActive: true,
       level: 0,
+      wins: 0,
       frogImg,
       logImg,
       carImg,
@@ -105,13 +107,13 @@ describe('Game test suite', () => {
     expect(actual).to.deep.equal(expected);
   });
 
-  it('should reset frog to begging game state when game.reset method is invoked', () => {
+  it('should reset frog to initial game state when game.reset method is invoked', () => {
     // Setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
     const carImg = '../img/yellow-car.png';
     const truckImg = '../img/large-truck.png';
-    const frog = new Frogger(frogImg, 275, 650, 50, 50);
+    // const frog = new Frogger(frogImg, 275, 650, 50, 50);
     const game = new Game(frogImg, logImg, carImg, truckImg);
     const expected = {
       x: 275,
@@ -120,20 +122,47 @@ describe('Game test suite', () => {
     // Execution
     game.reset();
     const actual = {
-      x: frog.x,
-      y: frog.y
+      x: game.frog.x,
+      y: game.frog.y
     };
     // Expectation
     expect(actual).to.deep.equal(expected);
   });
 
-  it('should reset frog to begging game state when game.outOfBounds method is invoked', () => {
+  it('should reset frog to initial game and remove 1 life state when game.drown method is invoked', () => {
     // Setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
     const carImg = '../img/yellow-car.png';
     const truckImg = '../img/large-truck.png';
-    const frog = new Frogger(frogImg, 275, 650, 50, 50);
+    const game = new Game(frogImg, logImg, carImg, truckImg);
+
+    const expected = {
+      x: 275,
+      y: 650,
+      lives: 2
+    };
+    // Execution
+    game.frog.floating = false;
+    game.frog.y = 275;
+
+    game.drown();
+    // game.reset();
+    const actual = {
+      x: game.frog.x,
+      y: game.frog.y,
+      lives: game.lives
+    };
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
+
+  it('should reset frog to initial game state when game.outOfBounds method is invoked', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
     const game = new Game(frogImg, logImg, carImg, truckImg);
     const expected = {
       x: 275,
@@ -142,8 +171,33 @@ describe('Game test suite', () => {
     // Execution
     game.outOfBounds();
     const actual = {
-      x: frog.x,
-      y: frog.y
+      x: game.frog.x,
+      y: game.frog.y
+    };
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
+
+  it('should reset frog to initial game state and add a point when game.hasMadeItToLillyPad when invoked', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
+    const game = new Game(frogImg, logImg, carImg, truckImg);
+    const expected = {
+      x: 275,
+      y: 650,
+      wins: 1
+    };
+    // Execution
+    game.frog.x = 75;
+    game.frog.y = 45;
+    game.hasMadeItToLillyPad();
+    const actual = {
+      x: game.frog.x,
+      y: game.frog.y,
+      wins: game.wins
     };
     // Expectation
     expect(actual).to.deep.equal(expected);
