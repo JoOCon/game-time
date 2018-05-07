@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Character from'../lib/Character';
+import Character from '../lib/Character';
 
 describe('Character test suite', () => {
   it('should instantiate a new Character with correct position', () => {
@@ -14,7 +14,6 @@ describe('Character test suite', () => {
       height: 50
     };
     // Expect
-
     expect(character).to.deep.equal(expected);
   });
 });

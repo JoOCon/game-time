@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import Frogger from '../lib/Frogger.js';
 import Log from '../lib/Log.js';
-require('locus');
 
 describe('Frogger test suite', () => {
   it('should insatiate a new Frogger in the correct position', () => {
@@ -16,7 +15,6 @@ describe('Frogger test suite', () => {
       height: 50,
       floating: false
     };
-
     // Expectation
     expect(frog).to.deep.equal(expected);
   });
@@ -27,10 +25,8 @@ describe('Frogger test suite', () => {
     const upEvent = 'up';
     const expectedUp = 600;
     // Execution
-
     frog.move(upEvent);
     const actualUp = frog.y;
-
     // Expectation
     expect(actualUp).to.equal(expectedUp);
   });
@@ -40,12 +36,10 @@ describe('Frogger test suite', () => {
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
     const expectedDown = 343;
-
     // Execution
     frog.move(rightEvent);
     const actualDown = frog.x;
     // Expectation
-
     expect(actualDown).to.equal(expectedDown);
   });
 
@@ -54,12 +48,10 @@ describe('Frogger test suite', () => {
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
     const expectedDown = 207;
-
     // Execution
     frog.move(leftEvent);
     const actualDown = frog.x;
     // Expectation
-
     expect(actualDown).to.equal(expectedDown);
   });
 
@@ -68,14 +60,12 @@ describe('Frogger test suite', () => {
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const upEvent = 'up';
     const expectedUp = 0;
-
     // Execution
     for (let i = 0; i < 13; i++) {
       frog.move(upEvent);
     }
     const actualDown = frog.y;
     // Expectation
-
     expect(actualDown).to.equal(expectedUp);
   });
 
@@ -84,14 +74,12 @@ describe('Frogger test suite', () => {
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const rightEvent = 'right';
     const expectedUp = 547;
-
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(rightEvent);
     }
     const actualDown = frog.x;
     // Expectation
-
     expect(actualDown).to.equal(expectedUp);
   });
 
@@ -100,15 +88,12 @@ describe('Frogger test suite', () => {
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
     const leftEvent = 'left';
     const expectedUp = 3;
-
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(leftEvent);
     }
-
     const actualDown = frog.x;
     // Expectation
-
     expect(actualDown).to.equal(expectedUp);
   });
 
@@ -127,7 +112,6 @@ describe('Frogger test suite', () => {
     frog.jumpOnLog(logs);
     const actual = frog.floating;
     // Expectation
-
     expect(actual).to.equal(expected);
   });
 
@@ -146,7 +130,6 @@ describe('Frogger test suite', () => {
     frog.jumpOnLog(logs);
     frog.drift(logs);
     const actual = frog.x;
-
     // Expectation
     expect(actual).to.equal(expected);
   });

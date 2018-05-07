@@ -16,7 +16,6 @@ describe('Log test suite', () => {
       direction: 'right'
     };
     // Expectation
-
     expect(log).to.deep.equal(expected);
   });
 
@@ -24,11 +23,9 @@ describe('Log test suite', () => {
     // Setup
     const log = new Log('../img/log.png', 550, 248, 250, 52, .55, 'left');
     const expectedLeft = 549.45;
-
     // Execution
     log.move();
     const actualRight = log.x;
-
     // Expectation
     expect(actualRight).to.equal(expectedLeft);
   });
@@ -37,11 +34,9 @@ describe('Log test suite', () => {
     // Setup
     const log = new Log('../img/log.png', -150, 298, 250, 52, .75, 'right');
     const expectedRight = -149.25;
-
     // Execution
     log.move();
     const actualRight = log.x;
-
     // Expectation
     expect(actualRight).to.equal(expectedRight);
   });
@@ -50,11 +45,9 @@ describe('Log test suite', () => {
     // Setup
     const log = new Log('../img/log.png', 625, 298, 250, 52, .75, 'right');
     const expectedRight = -220;
-
     // Execution
     log.move();
     const actualRight = log.x;
-
     // Expectation
     expect(actualRight).to.equal(expectedRight);
   });
@@ -63,11 +56,9 @@ describe('Log test suite', () => {
     // Setup
     const log = new Log('../img/log.png', -250, 248, 250, 52, 2, 'left');
     const expectedRight = 600;
-
     // Execution
     log.move();
     const actualRight = log.x;
-
     // Expectation
     expect(actualRight).to.equal(expectedRight);
   });
