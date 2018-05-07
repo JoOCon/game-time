@@ -30,6 +30,7 @@ describe('Game test suite', () => {
     const truck2 = new Auto(truckImg, 300, 555, 120, 40, 2);
     const truck3 = new Auto(truckImg, 150, 455, 120, 40, 2);
     const vehicles = [car1, car2, car3, car4, car5, car6, car7, truck1, truck2, truck3];
+    // Execution
     const expected = {
       lives: 3,
       gameActive: true,
@@ -42,7 +43,6 @@ describe('Game test suite', () => {
       logs,
       vehicles
     };
-    // Execution
     const actual = new Game(frogImg, logImg, carImg, truckImg);
     // Expectation
     expect(actual).to.deep.equal(expected);
