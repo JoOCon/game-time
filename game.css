@@ -1,6 +1,5 @@
 #frogger-canvas {
   background: black;
-  border: 1px dashed;
   display: block;
   margin: auto;
 }
@@ -8,4 +7,21 @@
 .header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  color: white;
+  margin: 1% 0;
+  padding: 0 20%;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }

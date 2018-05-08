@@ -9,19 +9,19 @@ describe('Frogger test suite', () => {
       img: '../img/frogger.png',
       x: 275,
       y: 650,
-      width: 50,
+      width: 40,
       height: 50,
       floating: false
     };
     // Execution
-    const actual = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const actual = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     // Expectation
     expect(actual).to.deep.equal(expected);
   });
 
   it('should be able to move up on canvas by 50px', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const upEvent = 'up';
     const expected = 600;
     // Execution
@@ -31,11 +31,11 @@ describe('Frogger test suite', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('should be able to move right on canvas by 68px', () => {
+  it('should be able to move right on canvas by 30px', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const rightEvent = 'right';
-    const expected = 343;
+    const expected = 305;
     // Execution
     frog.move(rightEvent);
     const actual = frog.x;
@@ -43,11 +43,11 @@ describe('Frogger test suite', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('should be able to move left on canvas by 68px', () => {
+  it('should be able to move left on canvas by 30px', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const leftEvent = 'left';
-    const expected = 207;
+    const expected = 245;
     // Execution
     frog.move(leftEvent);
     const actual = frog.x;
@@ -57,7 +57,7 @@ describe('Frogger test suite', () => {
 
   it('should be able move forward but not outside canvas', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const upEvent = 'up';
     const expected = 0;
     // Execution
@@ -71,9 +71,9 @@ describe('Frogger test suite', () => {
 
   it('should be able move right but not outside of canvas', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const rightEvent = 'right';
-    const expected = 547;
+    const expected = 395;
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(rightEvent);
@@ -85,9 +85,9 @@ describe('Frogger test suite', () => {
 
   it('should be able move left but not outside of canvas', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);
+    const frog = new Frogger('../img/frogger.png', 275, 650, 40, 50);
     const leftEvent = 'left';
-    const expected = 3;
+    const expected = 155;
     // Execution
     for (let i = 0; i < 4; i++) {
       frog.move(leftEvent);
@@ -99,7 +99,7 @@ describe('Frogger test suite', () => {
 
   it('should set frog.floating to true if frog is on a log', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', -150, 300, 50, 50);
+    const frog = new Frogger('../img/frogger.png', -150, 300, 40, 50);
     const log1 = new Log('../img/log.png', -150, 298, 250, 52, 1.5, 'right');
     const log2 = new Log('../img/log.png', 550, 248, 250, 52, 2, 'left');
     const log3 = new Log('../img/log.png', -150, 198, 250, 52, .5, 'right');
@@ -117,7 +117,7 @@ describe('Frogger test suite', () => {
 
   it('should be able to float and move on a log', () => {
     // Setup
-    const frog = new Frogger('../img/frogger.png', -150, 300, 50, 50);
+    const frog = new Frogger('../img/frogger.png', -150, 300, 40, 50);
     const log1 = new Log('../img/log.png', -150, 298, 250, 52, 1.5, 'right');
     const log2 = new Log('../img/log.png', 550, 248, 250, 52, 2, 'left');
     const log3 = new Log('../img/log.png', -150, 198, 250, 52, .5, 'right');
