@@ -37,7 +37,7 @@ describe('Auto test suite', () => {
     expect(actual).to.deep.equal(expected);
   });
 
-  it('when the move method is invoked I expect the x of car to increment by 2', () => {
+  it('should increment the cars x value by 2 when invoked', () => {
     // Setup
     const carImg = '../img/yellow-car.png';
     const car = new Auto(carImg, 50, 605, 80, 40, 2);
@@ -49,7 +49,7 @@ describe('Auto test suite', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('when the move method is invoked I expect the x of truck to increment by 2', () => {
+  it('should increment the truck x value by 2 when invoked', () => {
     // Setup
     const truckImg = '../img/large-truck.png';
     const truck = new Auto(truckImg, 50, 605, 80, 40, 2);

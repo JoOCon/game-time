@@ -29,10 +29,11 @@ describe('Game test suite', () => {
   });
 
   it('should generate a new Frogger', () => {
-    // Setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
-    const game = new Game(frogImg, logImg);
+    const truckImg = '../img/large-truck.png';
+    const carImg = '../img/yellow-car.png';
+    const game = new Game(frogImg, logImg, carImg, truckImg);
     const expected = game.frog;
     // Execution
     const actual = game.generateFrog();
@@ -161,6 +162,30 @@ describe('Game test suite', () => {
       x: game.frog.x,
       y: game.frog.y,
       wins: game.wins
+    };
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
+
+  it('should reset frog to initial game location and remove a life point when game.vehicleHitFrog is invoked', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
+    const game = new Game(frogImg, logImg, carImg, truckImg);
+    const expected = {
+      x: 275,
+      y: 650,
+      lives: 2
+    };
+    // Execution
+    game.frog.y = 550;
+    game.vehicleHitFrog();
+    const actual = {
+      x: game.frog.x,
+      y: game.frog.y,
+      lives: game.lives
     };
     // Expectation
     expect(actual).to.deep.equal(expected);
