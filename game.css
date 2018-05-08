@@ -48,6 +48,8 @@ h1 {
 }
 
 .header {
+  align-items: center;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -60,9 +62,9 @@ h1 {
   width: 10em;
   height: 2em;
   border-radius: 5em;
-  background: blue;
-  color: white;
-  border-color: blue;
+  background: #0021F5;
+  color: #FFFFFF;
+  border-color: #0021F5;
   font-size: .8em;
 }
 
