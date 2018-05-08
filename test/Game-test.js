@@ -81,6 +81,7 @@ describe('Game test suite', () => {
       y: 650
     };
     // Execution
+    game.frog.y = 300;
     game.reset();
     const actual = {
       x: game.frog.x,
