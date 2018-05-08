@@ -49,10 +49,10 @@ body {
 }
 
 .header {
+  align-items: center;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  color: white;
-  margin: 1% 0;
+  margin: 20px 0;
   padding: 0 20%;
 }

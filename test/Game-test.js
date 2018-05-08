@@ -190,4 +190,25 @@ describe('Game test suite', () => {
     // Expectation
     expect(actual).to.deep.equal(expected);
   });
+
+  it('should end game when game.gameOver method is invoked', () => {
+    // Setup
+    const frogImg = '../img/frogger.png';
+    const logImg = '../img/log.png';
+    const carImg = '../img/yellow-car.png';
+    const truckImg = '../img/large-truck.png';
+    const game = new Game(frogImg, logImg, carImg, truckImg);
+    const expected = {
+      gameActive: false
+    };
+    // Execution
+    game.lives = 0;
+    game.frog.y = 550;
+    game.gameOver();
+    const actual = {
+      gameActive: game.gameActive
+    };
+    // Expectation
+    expect(actual).to.deep.equal(expected);
+  });
 });
