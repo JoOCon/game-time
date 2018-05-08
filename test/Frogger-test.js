@@ -31,6 +31,18 @@ describe('Frogger test suite', () => {
     expect(actual).to.equal(expected);
   });
 
+  it('should be able to down up on canvas by 50px', () => {
+    // Setup
+    const frog = new Frogger('../img/frogger.png', 275, 600, 50, 50);
+    const downEvent = 'down';
+    const expected = 650;
+    // Execution
+    frog.move(downEvent);
+    const actual = frog.y;
+    // Expectation
+    expect(actual).to.equal(expected);
+  });
+
   it('should be able to move right on canvas by 68px', () => {
     // Setup
     const frog = new Frogger('../img/frogger.png', 275, 650, 50, 50);

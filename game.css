@@ -1,11 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   text-align: center;
+}
+
+.header h1 {
+  margin: 10px 0 20px;
 }
 
 .score-board {
   display: flex;
   font-size: 25px;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 #score {
@@ -17,4 +29,17 @@
   border: 1px dashed;
   display: block;
   margin: auto;
+}
+
+.instructions {
+  font-size: 18px;
+  left: 100px;
+  line-height: 25px;
+  max-width: 300px;
+  position: absolute;
+}
+
+.instructions-heading {
+  margin-bottom: 20px;
+  text-align: center;
 }
