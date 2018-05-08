@@ -9,19 +9,8 @@ body {
   background-color: black;
 }
 
-.header {
-  text-align: center;
-}
+h1 {
 
-.header h1 {
-  margin: 10px 0 20px;
-}
-
-.score-board {
-  display: flex;
-  font-size: 25px;
-  justify-content: center;
-  margin-bottom: 15px;
 }
 
 #score {
@@ -32,6 +21,16 @@ body {
   background: black;
   display: block;
   margin: auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.score-board {
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
 }
 
 .instructions {
@@ -53,6 +52,20 @@ body {
   justify-content: space-around;
   align-items: center;
   color: white;
+  padding: 0 25%;
   margin: 1% 0;
-  padding: 0 20%;
+}
+
+.reset {
+  width: 10em;
+  height: 2em;
+  border-radius: 5em;
+  background: blue;
+  color: white;
+  border-color: blue;
+  font-size: .8em;
+}
+
+.reset:focus {
+  display: none;
 }
