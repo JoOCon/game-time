@@ -206,7 +206,7 @@ describe('Game test suite', () => {
     expect(actual).to.deep.equal(expected);
   });
 
-  it('should reset frog to initial game state and add a point when game.hasMadeItToLillyPad when invoked', () => {
+  it('should reset frog to initial game location and remove a life point when game.vehicleHitFrog is invoked', () => {
     // Setup
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
