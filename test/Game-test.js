@@ -12,7 +12,7 @@ describe('Game test suite', () => {
     const logImg = '../img/log.png';
     const carImg = '../img/yellow-car.png';
     const truckImg = '../img/large-truck.png';
-    const frog = new Frogger(frogImg, 275, 650, 50, 50);
+    const frog = new Frogger(frogImg, 275, 650, 40, 50);
     const log1 = new Log(logImg, -150, 298, 250, 52, 1.5, 'right');
     const log2 = new Log(logImg, 550, 248, 250, 52, 2, 'left');
     const log3 = new Log(logImg, -150, 198, 250, 52, .5, 'right');
@@ -55,7 +55,7 @@ describe('Game test suite', () => {
     const frogImg = '../img/frogger.png';
     const logImg = '../img/log.png';
     const game = new Game(frogImg, logImg);
-    const expected = new Frogger(frogImg, 275, 650, 50, 50);
+    const expected = new Frogger(frogImg, 275, 650, 40, 50);
     // Execution
     const actual = game.generateFrog();
     // Expectation
