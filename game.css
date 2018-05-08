@@ -4,3 +4,8 @@
   display: block;
   margin: auto;
 }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
